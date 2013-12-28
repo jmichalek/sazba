@@ -11,7 +11,7 @@ Postup při instalaci
 (Postup pro ubuntu)
 
 1. Naklonujte si to z gitu příkazem 
-`git clone git://github.com/jmichalek/sazba.git`
+`git clone https://github.com/jmichalek/sazba.git`
 2. Můžete nyní začít systém používat k sazbě.
 
 Používání
