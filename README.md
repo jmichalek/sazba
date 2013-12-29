@@ -18,7 +18,7 @@ Používání
 ---------
 
 1. Zkopírujte složku `projects/new`
-2. Vložte do nového adresáře soubor `main.tex` ze složky `files/forms/` a dále podle zvolené šablony (vytvořením symbolického odkazu ve složce ~/Šablony můžete vytvářet nové soubory jediným klikem)
+2. Vložte do nového adresáře soubor `main.tex` ze složky `files/forms/` a dále podle zvolené šablony (vytvořením symbolického odkazu ve složce `~/Šablony` můžete vytvářet nové soubory jediným klikem z kontextového menu)
 3. Upravte soubor `main.tex` a zkompilujte ho příkazem `xelatex main`
 
 Struktura adresáře
