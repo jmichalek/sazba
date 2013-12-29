@@ -1,0 +1,52 @@
+\documentclass[11pt,a4paper,czech]{article}
+\input{files/styles/header.tex}
+\input{files/styles/pirati/template.tex}
+
+\begin{document}
+
+\title{Darovací smlouva}
+
+\begin{Form}
+
+\section{Smluvní strany}
+
+\polozka{Dárce}
+{
+   \NiceField[name=jmeno,width=5cm]{Jméno a příjmení:}  \hfill{} \NiceField[name=narozen,width=2.2cm]{narozen:}
+   
+   \NiceFieldFill[name=adresa]{Trvalé bydliště:}
+}
+
+\polozka{Obdarovaná}
+{
+   Česká pirátská strana, politická strana se sídlem Dalimilova 457/6, Praha 3
+   
+   \NiceFieldFill[name=zastoupen]{Právně zastoupena:}
+}
+
+\section{Předmět smlouvy}
+
+Dárce bezplatně přenechává dar obdarované, aby ho použila ke své politické činnosti. Dárce prohlašuje, že má právo darované plnění poskytnout, že je darování v souladu se zákonem a dobrými mravy a že nežádá žádnou protislužbu. 
+
+Obdarovaná dar s díky přijímá a zavazuje se ho využít sjednaným způsobem.
+
+\polozka{Dar}{\NiceFieldFill[name=plneni]{Popis plnění:}
+
+\NiceField[name=hodnota,width=1.4cm,align=2]{Odhad hodnoty:} Kč\hfill{} (\NiceField[name=slovy,width=3.7cm,align=2]{slovy:} korunčeských)
+}
+
+\section{Další ujednání}
+
+Dárce souhlasí se zveřejněním svých nadepsaných osobních údajů ve výroční finanční zprávě a na internetových stránkách obdarované. Smluvní strany souhlasí se zveřejněním této smlouvy.
+
+Smlouva se vyhotovuje ve dvou stejnopisech. Každá ze smluvních stran obdrží jeden stejnopis. Svou svobodnou vůli stvrzují smluvní strany podpisem:
+
+\NiceField[name=misto,width=3cm]{V} \NiceField[name=den,width=2.2cm]{dne}
+
+\end{Form}
+
+\signatureline{dárce}
+\signatureline{obdarovaná} 
+\hypersetup{pdfborder=0 0 0}
+
+\end{document}
