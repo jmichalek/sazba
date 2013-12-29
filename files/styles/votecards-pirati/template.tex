@@ -1,0 +1,77 @@
+\usepackage[margin=0cm]{geometry}
+\usepackage{amssymb}
+\usepackage{multicol}
+\def\labelitemi{\Large\(\Box\)}
+
+% nastavení fontů
+\setmainfont[
+    Path = files/fonts/LiberationSans/,
+    Ligatures=TeX,
+    UprightFont = *-Regular,
+    BoldFont=*-Bold.ttf,
+    ItalicFont=*-Italic.ttf,
+    BoldItalicFont=*-BoldItalic]{LiberationSans}
+\setmonofont[
+    Path = files/fonts/LiberationSans/,
+    Ligatures=TeX,
+    UprightFont = *-Regular,
+    BoldFont=*-Bold.ttf,
+    ItalicFont=*-Italic.ttf,
+    BoldItalicFont=*-BoldItalic]{LiberationSans}
+
+\pagestyle{empty}
+
+
+% Titulek
+
+\renewcommand{\title}[1]{
+\vspace*{0.3cm}
+\begin{center}
+{\LARGE #1}
+\end{center}
+\hypersetup{
+    pdftitle={#1},
+    pdfauthor={Česká pirátská strana},
+    hidelinks=true,
+    pdfborder={0 0 0}
+}
+}
+
+\newcommand{\listek}
+{\hspace*{0.025\textwidth}
+\begin{minipage}[t][0.45\textheight]{0.45\textwidth}
+
+\title{Hlasovací lístek}
+
+\begin{center}
+\volba
+\end{center}
+     
+% kandidáti     
+\begin{multicols}{2}
+\begin{itemize}
+\kandidati
+\end{itemize}
+\end{multicols}
+
+\begin{framed}
+\ramecek
+\end{framed}
+
+
+\signatureline{Parafa} 
+\signatureline{Parafa}
+
+\vfill{}
+\begin{center}
+\includegraphics[clip,width=0.4\textwidth]{files/styles/votecards-pirati/logotyp}%
+\end{center}
+\vspace*{0.5cm}
+\end{minipage}
+\hspace*{0.025\textwidth}}
+
+\AtEndDocument{\vspace*{0.025\textheight}\listek \listek
+
+\vspace{0.025\textheight}
+\listek \listek
+\vspace{0.025\textheight}}
