@@ -1,0 +1,56 @@
+\usepackage[margin=2.5cm,footskip=1cm,bottom=3.5cm,top=4cm]{geometry}
+
+% nastavení fontů
+\setmainfont[
+    Path = files/fonts/LiberationSans/,
+    Ligatures=TeX,
+    UprightFont = *-Regular,
+    BoldFont=*-Bold.ttf,
+    ItalicFont=*-Italic.ttf,
+    BoldItalicFont=*-BoldItalic]{LiberationSans}
+\setmonofont[
+    Path = files/fonts/LiberationSans/,
+    Ligatures=TeX,
+    UprightFont = *-Regular,
+    BoldFont=*-Bold.ttf,
+    ItalicFont=*-Italic.ttf,
+    BoldItalicFont=*-BoldItalic]{LiberationSans}
+
+% Pozadí stránky
+\usepackage{wallpaper}
+\usepackage{fancyhdr}
+
+\pagestyle{empty}
+
+% první stránka obsahuje pozadí
+\AtBeginDocument
+{
+   \thispagestyle{empty}
+   \ThisULCornerWallPaper{1}{files/styles/pirati/pozadi.pdf}
+}
+
+% Titulek
+
+\renewcommand{\title}[1]{
+\vspace*{0.2cm}
+\begin{center}
+{\LARGE #1}
+\end{center}
+\hypersetup{
+    pdftitle={#1},
+    pdfauthor={Česká pirátská strana},
+    hidelinks=true,
+    pdfborder={0 0 0}
+}
+}
+
+% Číslování nadpisů
+
+\titleformat{\section}
+{\normalsize\bfseries\center}
+{Čl.\,\thesection}{1ex}{}
+\renewcommand{\thesection}{\arabic{section}}
+\titlespacing{\section}{0em}{2.0em}{0.5em}
+
+%%%%%%%%%%% DEFINOVÁNÍ STYLŮ %%%%%%%%%%%%%%%%%
+\renewcommand{\labelitemi}{$-$}

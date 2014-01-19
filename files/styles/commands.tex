@@ -9,10 +9,10 @@ právně zast.:
 #1}
 
 \newcommand{\polozka}[2]{
-\begin{minipage}[t]{0.2\columnwidth}%
+\begin{minipage}[t]{0.3\columnwidth}%
 \textbf{#1}:
 \end{minipage}
-\begin{minipage}[t]{0.8\columnwidth}%
+\begin{minipage}[t]{0.7\columnwidth}%
 #2
 
 \medskip{}
@@ -23,7 +23,7 @@ právně zast.:
 \newcommand{\signatureline}[1]{
 \hfill{}
 \begin{minipage}[t]{0.3\columnwidth}%
-\vspace{1.1cm}
+\vspace{0.7cm}
 \dotfill{}
 \begin{center}
 #1
@@ -63,7 +63,10 @@ právně zast.:
 \begin{minipage}[t][3cm][t]{0.4\linewidth}% 
 \ifthenelse{\equal{#1}{}}{}{\textbf{#1}: \\}%
 #2%
-\end{minipage}}
+\end{minipage}
+
+\bigskip
+}
 
 
 \newcommand{\udaj}[3]{%
@@ -109,5 +112,5 @@ Odůvodnění:
 }
 
 \newcommand\DS[1][]{%
-datová schránka \uline{#1}
+do datové schránky\hspace{-0.1777em}\ttfamily{#1}
 }
