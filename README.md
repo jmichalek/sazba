@@ -10,6 +10,8 @@ Postup při instalaci
 --------------------
 (Postup pro ubuntu)
 
+1. Nainstalujte si verzovací systém git příkazem
+`sudo apt-get install git`
 1. Naklonujte si to z gitu příkazem 
 `git clone https://github.com/jmichalek/sazba.git`
 2. Můžete nyní začít systém používat k sazbě.
@@ -17,8 +19,8 @@ Postup při instalaci
 Používání
 ---------
 
-1. Zkopírujte složku `projects/new`
-2. Vložte do nového adresáře soubor `main.tex` ze složky `files/forms/` a dále podle zvolené šablony (vytvořením symbolického odkazu ve složce `~/Šablony` můžete vytvářet nové soubory jediným klikem z kontextového menu)
+1. Zkopírujte některou šablonu ze složky `files/forms/` do svého nového pracovního adresáře s rozdělanými projekty.
+2. Ujistěte se, že ve vašem pracovním adresáři funguje symbolický odkaz na složku `files`. Pokud nefunguje, vytvořte nový symbolický odkaz na tuto složku a umistěte ho do adresáře, kde je soubor `main.tex`. 
 3. Upravte soubor `main.tex` a zkompilujte ho příkazem `xelatex main`
 
 Struktura adresáře
@@ -28,6 +30,6 @@ Pro uplnost zde popíšu ještě, jak je celý projekt strukturovaný:
 
 + `files` - složka s krátkodobě neměnnými soubory šablon
    - `fonts` - složka se soubory písem
-   - `forms` - obsahové šablony se vzorovými dokumenty
+   - `forms` - obsahové šablony se vzorovými dokumenty, které lze rovnou kopírovat
    - `styles` - styly pro formátování stránek a vlastní příkazy
-+ `projects` - konkrétní projekty/dokumenty vytvořené v rámci šablony
++ `scripts` - základní skripty pro výpisy jednoduché spisové služby fom
