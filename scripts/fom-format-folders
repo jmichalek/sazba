@@ -1,0 +1,5 @@
+#! /bin/bash
+# Lists all folders with their labels in the directory
+
+cat $1 | jq -r '{"umístění": "'$(dirname $1)'", "věc": .folder.case, "značka": .folder.label}';
+
