@@ -1,0 +1,7 @@
+#! /bin/bash
+# Lists all folders with their labels in the directory
+
+cat $1 | jq '.folder.tasks[] | {"odpovědná osoba":.responsible, "úkol": .name, "dokončeno": .finished, "termín": .deadline}';
+
+#cat $1 | jq -r '{"odpovědná osoba": .folder.tasks[].responsible, "úkol": .folder.tasks[].name, "termín": .folder.tasks[].deadline}';
+
