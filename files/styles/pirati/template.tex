@@ -59,10 +59,18 @@ Transparentní účet 2100048174/2010}% Your logo/image
 
 % Číslování nadpisů
 
+\def\arabicsections{
 \titleformat{\section}
 {\normalsize\bfseries\center}
 {Čl.\,\thesection}{1ex}{}
-\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesection}{\arabic{section}}}
+
+\def\Romansections{
+\titleformat{\section}
+{\normalsize\bfseries\center}
+{\thesection.}{1ex}{}
+\renewcommand{\thesection}{\Roman{section}}}
+
 \titlespacing{\section}{0em}{2em}{0.5em}
 
 %%%%%%%%%%% DEFINOVÁNÍ STYLŮ %%%%%%%%%%%%%%%%%

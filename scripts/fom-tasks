@@ -1,0 +1,4 @@
+#! /bin/bash
+# Lists all tasks with their attributes in the directory
+
+find . -type f -name metadata.json -exec fom-format-tasks {} \;
