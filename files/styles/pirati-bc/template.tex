@@ -1,0 +1,93 @@
+% nastavení fontů
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{pstricks}
+\usepackage{pst-barcode}
+\usepackage[zw32010,crossmark]{ticket}
+
+% load misc stuff
+
+
+% define something
+\definecolor{uni}{rgb}{.3019,.7216,.7019}
+
+\renewcommand{\ticketdefault}{%
+}
+
+\setmainfont[
+    Path = files/fonts/LiberationSans/,
+    Ligatures=TeX,
+    UprightFont = *-Regular,
+    BoldFont=*-Bold.ttf,
+    ItalicFont=*-Italic.ttf,
+    BoldItalicFont=*-BoldItalic]{LiberationSans}
+\setmonofont[
+    Path = files/fonts/LiberationSans/,
+    Ligatures=TeX,
+    UprightFont = *-Regular,
+    BoldFont=*-Bold.ttf,
+    ItalicFont=*-Italic.ttf,
+    BoldItalicFont=*-BoldItalic]{LiberationSans}
+
+\newcommand{\vcardfrontold}[4]{\ticket{%
+
+    %\put( 63, 5){\includegraphics[width=40mm,angle=90,origin=bl]{ifmlogoc}}
+    %\put( 63.2, 2){\color{uni}your logo}
+    %\put( 5, 13){\color{uni}\line(1,0){56}}
+    %\put( 7, 10){\small your company}
+    %\put( 7,6.5){\small street 1}
+    %\put( 7,  3){\small xxxxx city and state}
+    %\put( 7, 24){\small phone:}
+    %\put( 7, 20){\small fax:}
+    %\put(6,40) #1}
+    %\put(7,36){#2}
+
+\put(0,0){\includegraphics[width=8.6cm,origin=bl]{files/styles/pirati-bc/prednistrana.pdf}}
+
+\put(3,27){
+\begin{minipage}[t]{60mm}
+\colorbox{white}{#1} \\
+\colorbox{white}{\emph{#2}}
+
+\bigskip
+\colorbox{white}{#3} \\
+\colorbox{white}{\uline{#4}}
+\end{minipage}
+}
+
+\put(49,10){
+\colorbox{white}{
+\begin{minipage}[t]{30mm}
+        \begin{pspicture}(30mm,30mm)
+        \psbarcode{MECARD:N:Michálek,Jakub;EMAIL:#4;URL:http://pirati.cz;;}{eclevel=L width=1.181 height=1.181}{qrcode}
+        \end{pspicture}
+    \end{minipage}
+ }}
+ \put(51.5,5){\colorbox{white}{\uline{http://www.pirati.cz}}}
+ }}
+
+\newcommand{\vcardbackold}[1]{\ticket{%
+    \includegraphics[width=8.6cm,origin=bl]{files/styles/pirati-bc/zadnistrana.pdf}
+%    \put( 7, 26){\small private:}
+ %   \put( 5, 23){\color{uni}\line(1,0){56}}
+ %   \put( 7,19){\small%
+ %       \begin{minipage}[t]{50mm}%
+ %         {#1}\hss%
+ %       \end{minipage}}%
+}}
+
+\newcounter{numcards}
+
+\newcommand{\vcardfront}[4]{
+\setcounter{numcards}{0}
+\whiledo{\thenumcards<10}{%
+  \stepcounter{numcards}%
+  \vcardfrontold{#1}{#2}{#3}{#4}}}
+
+
+\newcommand{\vcardback}{
+\setcounter{numcards}{0}
+\whiledo{\thenumcards<10}{%
+  \stepcounter{numcards}%
+  \vcardbackold{phone: ---/HH HH HHH\\fax: ---/HH HH HHH\\homestreet 7\\everywhere}}
+}
