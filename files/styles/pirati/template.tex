@@ -68,10 +68,18 @@ Transparentní účet 2100048174/2010}% Your logo/image
 \def\Romansections{
 \titleformat{\section}
 {\normalsize\bfseries\center}
-{\thesection.}{1ex}{}
-\renewcommand{\thesection}{\Roman{section}}}
+{\thesection}{1ex}{}
+\renewcommand{\thesection}{\Roman{section}.}
+
+\titleformat{\subsection}
+{\normalsize\center\emph}
+{\thesubsection}{1ex}{}
+\renewcommand{\thesubsection}{\Roman{section}.\alph{subsection})}
+}
+
 
 \titlespacing{\section}{0em}{2em}{0.5em}
 
 %%%%%%%%%%% DEFINOVÁNÍ STYLŮ %%%%%%%%%%%%%%%%%
+\usepackage{enumerate}
 \renewcommand{\labelitemi}{$-$}
