@@ -1,0 +1,118 @@
+%% fonty
+\usepackage{fontspec}
+\setmainfont[Ligatures=TeX]{Stempel Garamond}
+\defaultfontfeatures{Mapping=tex-text}
+\usepackage{textcase}
+\renewcommand{\textsc}[1]{\MakeTextUppercase{#1}} % příjmení autorů velkými písmeny
+
+%% typografická zlepšení
+%\usepackage{csquotes}
+
+\usepackage{titlesec}
+
+\titleformat{\paragraph}[display]
+{\normalfont\bfseries}{Čl.~\arabic{paragraph}}{1em}{}
+
+%% floats get barriers
+\usepackage[section]{placeins}
+
+%% poznámky pod čarou
+\usepackage{footnote} % možnost používat poznámky pod čarou v tabulkách
+\makesavenoteenv{tabular} % automaticky se budou ukládat poznámky pod čarou v prostředí tabular
+\makesavenoteenv{table} % automaticky se budou ukládat poznámky pod čarou v prostředí table
+% zůstává problém, že při kliknutí na odkaz na poznámku pod čarou vytvořený pomocí hyperref nefunguje
+
+%% citování
+\usepackage[backend=biber,
+style=footnote-dw,%authortitle-dw
+namefont=smallcaps,
+isbn=true,
+language=english,
+autocite=footnote,
+backref=true,
+hyperref,
+nopublisher=false]{biblatex} 
+\urlstyle{rm}
+
+\DeclareFieldFormat{title}{\mkbibemph{#1}} % titul kurzívou
+\let\cite\autocite
+
+\defbibheading{bibliography}{\section*{Seznam použité literatury}} % přejmenování sekce
+
+%% závěrečné úkony
+\AtEndDocument{
+\addcontentsline{toc}{section}{Seznam použité literatury}
+\printbibliography} % tisk bibliografie na konci souboru
+
+\let\finalandcomma=\!
+\renewcommand*{\multinamedelim}{\addcomma\space}
+\renewcommand*{\finalnamedelim}{%
+\ifnum\value{liststop}>2 \finalandcomma\fi%
+\addsemicolon\space}
+\renewcommand*{\bibmultinamedelim}{\addcomma\space}
+\renewcommand*{\bibfinalnamedelim}{%
+\ifnum\value{liststop}>2 \finalandcomma\fi%
+\addsemicolon\space}%
+\renewcommand*{\citemultinamedelim}{\addsemicolon\space}
+\renewcommand*{\citefinalnamedelim}{\addsemicolon\space}
+\renewcommand*{\labelnamepunct}{\addperiod\space}
+\renewcommand*{\nametitledelim}{\addperiod\space}
+\renewcommand*{\newunitpunct}{\addperiod\space}
+
+\DefineBibliographyStrings{english}{%
+seenote          = {viz pozn\adddot},
+page          = {s\adddot},
+pages          = {s\adddot},
+backrefpage = {citováno na s\adddot},
+backrefpages= {citováno na s\adddot},
+url = {Dostupný z WWW\addcolon},
+byeditor         = {ed\adddotspace},
+urlseen         = {cit\adddot},
+}
+
+% popiseky tabulek
+\usepackage[hang,bf,small]{caption} % úprava popisku tabulky
+\setlength{\captionmargin}{20pt}
+
+% tisk částí
+\let\stdpart\part
+\renewcommand*{\part}{\clearpage\stdpart}
+
+%% nechceme zobrazovat url v dokumentu
+%\AtEveryCite{%
+%\clearfield{url}%
+%\clearfield{urldate}%
+ %\DeclareFieldFormat{url}{}%
+ %\DeclareFieldFormat{urldate}{}%
+%}
+
+% Formát data v url
+\DeclareFieldFormat{urldate}{%
+  \iffieldundef{urlday}
+    {}
+    {\stripzeros{\thefield{urlday}}\adddot%
+\stripzeros{\thefield{urlmonth}}\adddot%
+\printfield{urlyear}}%
+}
+
+\renewbibmacro{url+urldate}{%
+\iffieldundef{urlday}
+    {}
+  {\space\printtext{[}\bibstring{urlseen} \printurldate\printtext{]}} 
+\iffieldundef{url}
+{}
+{\printfield{url}\adddotspace}}
+
+\DeclareFieldFormat{url}{\bibstring{url} <\url{#1}>}
+
+% Správné zpětné citace
+\renewcommand*{\finentrypunct}{}
+\renewbibmacro*{pageref}{%
+  \addperiod% NEW
+  \iflistundef{pageref}
+    {}
+    {\printtext[parens]{% NEW
+       \ifnumgreater{\value{pageref}}{1}
+         {\bibstring{backrefpages}\ppspace}
+     {\bibstring{backrefpage}\ppspace}%
+       \printlist[pageref][-\value{listtotal}]{pageref}\addperiod}}}% NEW
