@@ -1,0 +1,48 @@
+\usepackage[margin=2.5cm,footskip=1cm,bottom=4cm,top=4cm]{geometry}
+
+% nastavení fontů
+\setmainfont[
+    Path = files/fonts/StempelGaramond/,
+    Ligatures=TeX,
+    UprightFont = *-Roman.otf,
+    BoldFont=*-Bold.otf,
+    ItalicFont=*-Italic.otf,
+    BoldItalicFont=*-BoldItalic.otf,
+    BoldItalicFont=*-BoldItalic]{StempelGaramondCE}
+
+% Pozadí stránky
+
+% Číslování nadpisů
+
+%%%%%%%%%%% DEFINOVÁNÍ STYLŮ %%%%%%%%%%%%%%%%%
+\renewcommand{\labelitemi}{$-$}
+
+\usepackage{babel}
+\usepackage{array}
+\usepackage{varioref}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{setspace}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+\usepackage{textcase}
+\renewcommand{\textsc}[1]{\MakeTextUppercase{#1}} % příjmení autorů velkými písmeny
+
+%% typografická zlepšení
+\usepackage{csquotes}
+
+%% floats get barriers
+\usepackage[section]{placeins}
+
+%% poznámky pod čarou
+\usepackage{footnote} % možnost používat poznámky pod čarou v~tabulkách
+\makesavenoteenv{tabular} % automaticky se budou ukládat poznámky pod čarou v~prostředí tabular
+\makesavenoteenv{table} % automaticky se budou ukládat poznámky pod čarou v~prostředí table
+% zůstává problém, že při kliknutí na odkaz na poznámku pod čarou vytvořený pomocí hyperref nefunguje
+
+\usepackage{xunicode}
