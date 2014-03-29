@@ -5,6 +5,8 @@ Autor: Jakub Michálek
 
 Tato složka umožňuje vytvářet malé a typograficky propracované dokumenty pomocí sázacího systému XeTeX. Uživatel může vytvářet vlastní šablony se vzhledem, který mu vyhovuje. 
 
+Před instalací musíte mít připravený systém XeTeX s potřebnými balíčky. To uděláte na distribuci ubuntu příkazem
+`sudo apt-get install biber, biblatex-dw, texlive-xetex, texlive-lang-czechslovak`
 
 Postup při instalaci
 --------------------
