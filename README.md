@@ -14,8 +14,7 @@ Postup při instalaci
 
 1. Naklonujte si zdroje z githubu příkazem 
 `git clone https://github.com/jmichalek/sazba.git`
-2. Vytvořte symbolický odkaz na příkaz makelatex ve své domovské složce 
-`ln -s scripts/makelatex ~/bin/makelatex`
+2. Vytvořte symbolický odkaz na příkaz `./sazba/scripts/makelatex` ve své domovské složce `~/bin/`. Pokud nevíte, jak na to, spusťte dvojitým poklepáním jednoduchý skript v adresáři `./sazba/scripts/install.sh`.
 3. Můžete nyní začít systém používat k sazbě.
 
 
@@ -34,4 +33,4 @@ Pro uplnost zde popíšu ještě, jak je celý projekt strukturovaný:
    - `fonts` - složka se soubory písem
    - `forms` - obsahové šablony se vzorovými dokumenty, které lze rovnou kopírovat
    - `styles` - styly pro formátování stránek a vlastní příkazy
-+ `scripts` - základní skripty pro výpisy jednoduché spisové služby fom
++ `scripts` - základní skripty pro výpisy jednoduché spisové služby, instalaci a kompilaci
