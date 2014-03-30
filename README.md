@@ -15,7 +15,7 @@ Postup při instalaci
 1. Naklonujte si zdroje z githubu příkazem 
 `git clone https://github.com/jmichalek/sazba.git`
 2. Vytvořte symbolický odkaz na příkaz makelatex ve své domovské složce 
-`ln -s makelatex ~/bin/makelatex`
+`ln -s scripts/makelatex ~/bin/makelatex`
 3. Můžete nyní začít systém používat k sazbě.
 
 
