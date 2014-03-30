@@ -5,25 +5,25 @@ Autor: Jakub Michálek
 
 Tato složka umožňuje vytvářet malé a typograficky propracované dokumenty pomocí sázacího systému XeTeX. Uživatel může vytvářet vlastní šablony se vzhledem, který mu vyhovuje. 
 
-Před instalací musíte mít připravený systém XeTeX s potřebnými balíčky. To uděláte na distribuci ubuntu příkazem
-`sudo apt-get install biber, biblatex-dw, texlive-xetex, texlive-lang-czechslovak`
+Před instalací musíte mít připravený systém XeTeX s potřebnými balíčky včetně gitu. To uděláte na distribuci ubuntu příkazem
+`sudo apt-get install biber, biblatex-dw, texlive-xetex, texlive-lang-czechslovak, git`
 
 Postup při instalaci
 --------------------
 (Postup pro ubuntu)
 
-1. Nainstalujte si verzovací systém git příkazem
-`sudo apt-get install git`
-1. Naklonujte si to z gitu příkazem 
+1. Naklonujte si zdroje z githubu příkazem 
 `git clone https://github.com/jmichalek/sazba.git`
-2. Můžete nyní začít systém používat k sazbě.
+2. Vytvořte symbolický odkaz na příkaz makelatex ve své domovské složce 
+`ln -s makelatex ~/bin/makelatex`
+3. Můžete nyní začít systém používat k sazbě.
+
 
 Používání
 ---------
 
 1. Zkopírujte některou šablonu ze složky `files/forms/` do svého nového pracovního adresáře s rozdělanými projekty.
-2. Ujistěte se, že ve vašem pracovním adresáři funguje symbolický odkaz na složku `files`. Pokud nefunguje, vytvořte nový symbolický odkaz na tuto složku a umistěte ho do adresáře, kde je soubor `main.tex`. 
-3. Upravte soubor `main.tex` a zkompilujte ho příkazem `xelatex main`
+2. Upravte soubor `main.tex` a zkompilujte ho příkazem `xelatex main`
 
 Struktura adresáře
 ------------------
