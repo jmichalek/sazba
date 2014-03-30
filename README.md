@@ -23,7 +23,7 @@ Používání
 ---------
 
 1. Zkopírujte některou šablonu ze složky `files/forms/` do svého nového pracovního adresáře s rozdělanými projekty.
-2. Upravte soubor `main.tex` a zkompilujte ho příkazem `xelatex main`
+2. Upravte soubor `main.tex` a zkompilujte ho příkazem `makelatex main`
 
 Struktura adresáře
 ------------------
