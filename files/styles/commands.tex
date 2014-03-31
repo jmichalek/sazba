@@ -40,10 +40,9 @@ právně zast.:
 
 
 \newcommand{\signature}[1]{
+
 \vspace{1em}%
-\hfill \begin{minipage}[t]{0.3\columnwidth}%
-#1
-\end{minipage}
+\recipient[]{#1}
 }
 
 % Definice textů hlavičky
@@ -114,3 +113,23 @@ Odůvodnění:
 \newcommand{\DS}[1]{
 do datové schránky \uline{#1}
 }
+
+\newcommand{\adresa}[5]{%
+#1 \\ #2 \\
+#3 \quad #4
+\ifthenelse{\equal{#5}{}}{}{
+
+\bigskip
+\DS{#5}}}%
+
+\makeatletter
+
+\def\jmenovka#1#2#3#4#5#6#7{%
+   \expandafter\def\csname #1\endcsname##1{%
+   \ifthenelse{\equal{##1}{short}}{#3}{}%
+   \ifthenelse{\equal{##1}{full}}{\adresa{#3}{#4}{#5}{#6}{#7}}{}%
+   \ifthenelse{\equal{##1}{role}}{#2}{}}%   
+}
+
+\makeatother
+

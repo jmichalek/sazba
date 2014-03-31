@@ -1,0 +1,56 @@
+#! /bin/bash
+# Export metadata from of the folder stored in folder.json to LaTeX file 
+
+# definitions of relevant variables
+yoursign=$(cat folder.json | jq -r '.yoursign');
+oursign=$(cat folder.json | jq -r '.oursign');
+casename=$(cat folder.json | jq -r '.case');
+responsible=$(cat folder.json | jq -r '.responsible');
+
+# export metadata to LaTeX
+echo '\def \oursign {'"$oursign"'}' > folder.tex
+echo '\def \yoursign {'"$yoursign"'}' >> folder.tex
+echo '\def \casename {'"$casename"'}' >> folder.tex
+echo '\def \responsible {'"$responsible"'}' >> folder.tex
+
+
+defineparty () {
+   role=$(echo "$1" | jq -r '.role');
+   rolebez=$(echo $role | iconv -f UTF8 -t ASCII//TRANSLIT | tr -cd [:alpha:])
+   name=$(echo "$1" | jq -r '.name');
+   street=$(echo "$1" | jq -r '.street');
+   postalcode=$(echo "$1" | jq -r '.postalcode');
+   city=$(echo "$1" | jq -r '.city');
+   idds=$(echo "$1" | jq -r '.idds');
+   echo '\jmenovka {'"$rolebez"'} {'"$role"'} {'"$name"'} {'"$street"'} {'"$postalcode"'} {'"$city"'} {'"$idds"'}' >> folder.tex
+}
+
+i=0
+strana=$(cat folder.json | jq -r '.parties['$i']')
+while [ "$strana" != "null" ]; do
+   defineparty "$strana"
+   let i+=1
+   strana=$(cat folder.json | jq -r '.parties['$i']') 
+done
+
+
+#echo $strana
+#if [ "$strana" == "null" ]; 
+#  then echo "jo"  
+#fi
+
+
+
+# cat metadata.json | jq -r '.folder.oursign' | head -c -1 >> metadata.tex
+# printf '}' >> metadata.tex
+
+# parties
+
+
+#cat metadata.json | jq -r '.folder.parties[] | {"postavení":.role, "název": .name, "ulice": .street, "PSČ" : .["postal code"], "město": .city, "idds":.idds}' > jq -r '
+
+#printf '\def \oursign {' >> metadata.tex
+
+# cat metadata.json | jq '.folder.tasks[] | {"odpovědná osoba":.responsible, "úkol": .name, "dokončeno": .finished, "termín": .deadline}';
+
+#cat $1 | jq -r '{"odpovědná osoba": .folder.tasks[].responsible, "úkol": .folder.tasks[].name, "termín": .folder.tasks[].deadline}';

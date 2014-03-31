@@ -1,0 +1,20 @@
+{ 
+"case": "Název případu",
+"oursign": "JM X/2014",
+"yoursign": "7A 127/2011",
+"responsible": "Jakub Michálek",
+"parties": [
+       {"role": "povinný subjekt", 
+       "name" : "Státní fond kinematografie", 
+       "street": "Dukelských hrdinů 47",
+       "postalcode": "17000",
+       "city": "Praha 7",
+       "idds": "ng8unnb"},
+      {"role": "žadatel", 
+       "name" : "Mgr. Bc. Jakub Michálek", 
+       "street": "Zenkova 841/193",
+       "postalcode": "18200",
+       "city": "Praha 8",
+       "idds": "4memzkm"}
+      ]
+}
