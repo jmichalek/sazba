@@ -10,3 +10,4 @@ done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 ln -s $DIR/makelatex ~/bin/makelatex
+ln -s $DIR/makedopis ~/bin/makedopis
