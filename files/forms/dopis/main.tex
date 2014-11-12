@@ -1,26 +1,26 @@
 \documentclass[11pt,a4paper,czech]{article}
 \input{files/styles/header.tex}
-\input{files/styles/pirati/template.tex}
+\input{files/styles/$styl$/template.tex}
 
 \begin{document}
 
-\recipient[]{Ústavní soud \\ Joštova 625/8 \\
-602\,00 \quad Brno
+\recipient[$prijemce.role$]{$prijemce.nazev$ \\ $if(prijemce.dovetek)$ $prijemce.dovetek$ \\$endif$ $prijemce.ulice$ \\
+$prijemce.PSC$ \quad $prijemce.mesto$
 
 \bigskip
-\DS{ }}
+\DS{$prijemce.DS$}}
 
-\def \yoursign { }
-\def \yourdate { }
-\def \oursign { }
-\def \place {Praha}
+\def \yoursign {$vase.znacka$}
+\def \yourdate {$vase.den$}
+\def \oursign {$nase.znacka$}
+\def \place {$nase.misto$}
 
 \printheader
 
-\subject{}
+\subject{$vec$}
 
+$body$
 
-\signature{Česká pirátská strana}
+\signature{$for(podpis)$$podpis$ \\$endfor$}
 
-%\attachments
 \end{document}

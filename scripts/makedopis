@@ -1,0 +1,5 @@
+#! /bin/bash
+# Sází dopis z markdownové šablony
+
+pandoc --template=files/forms/dopis/main.tex --latex-engine=xelatex main.md -o main.pdf
+podpis jakub main.pdf

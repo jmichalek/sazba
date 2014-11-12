@@ -1,0 +1,55 @@
+\documentclass[11pt,a4paper,czech]{article}
+\input{files/styles/header.tex}
+\input{files/styles/pirati-proz/template.tex}
+
+\begin{document}
+
+\title{Sponzorská smlouva}
+
+\begin{Form}
+
+\section{Smluvní strany}
+
+\polozka{Sponzor}
+{
+   \NiceField[name=jmeno,width=5cm]{Název:}  \hfill{} \NiceField[name=narozen,width=2.2cm]{IČ:}
+   
+   \NiceFieldFill[name=adresa]{Adresa sídla:}
+
+   \NiceFieldFill[name=zastoupen1]{Právně zastoupena:}
+}
+
+\polozka{Sponzorovaná}
+{
+   Česká pirátská strana, IČ 71339698, Dalimilova 457/6, Praha 3
+   
+   \NiceFieldFill[name=zastoupen2]{Právně zastoupena:}
+}
+
+\section{Předmět smlouvy}
+
+Sponzor bezplatně a neodvolatelně přenechává sponzorský dar sponzorované, aby ho použila ke své politické činnosti. Sponzor prohlašuje, že je oprávněn sponzorský dar poskytnout, že je sponzorství v~souladu se zákonem a dobrými mravy a že nežádá žádnou protislužbu. 
+
+Sponzorovaná sponzorský dar s díky přijímá a zavazuje se ho využít sjednaným způsobem. Sponzorovaná se zavazuje zveřejnit informaci o sponzorství podle této smlouvy v zájmu transparence na svých internetových stránkách a na sociálních sítích.
+
+\polozka{Sponzorský dar}{\NiceFieldFill[name=plneni]{Popis plnění:}
+
+\NiceField[name=hodnota,width=1.4cm,align=2]{Odhad hodnoty:} Kč\hfill{} (\NiceField[name=slovy,width=3.7cm,align=2]{slovy:} korunčeských)
+}
+
+\section{Další ujednání}
+
+Smluvní strany souhlasí se zveřejněním této smlouvy. Smlouva se vyhotovuje ve dvou stejnopisech. Každá ze smluvních stran obdrží jeden stejnopis. Smlouvu neuzavírají smluvní strany v tísni ani za nevýhodných podmínek. Svou svobodnou vůli stvrzují smluvní strany podpisem:
+
+\NiceField[name=misto,width=3cm]{V} \NiceField[name=den,width=2.2cm]{dne}
+
+\end{Form}
+
+\signatureline{sponzor}
+\signatureline{sponzorovaná} 
+
+\emph{Sponzor si může hodnotu sponzorského daru odečíst od základu daně (§ 20 odst. 8 zákona č. 586/1992 Sb., o daních z příjmů, ve znění pozdějších předpisů).}
+
+\hypersetup{pdfborder=0 0 0}
+
+\end{document}
