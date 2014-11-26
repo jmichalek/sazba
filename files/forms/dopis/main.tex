@@ -10,9 +10,10 @@ $if(vyrizuje.mail)$ \def \mymail {$vyrizuje.mail$} $endif$
 
 \recipient[$prijemce.role$]{$prijemce.nazev$ \\ $if(prijemce.dovetek)$ $prijemce.dovetek$ \\$endif$ $prijemce.ulice$ \\
 $prijemce.PSC$ \quad $prijemce.mesto$
+$if(prijemce.DS)$
 
 \bigskip
-\DS{$prijemce.DS$}}
+\DS{$prijemce.DS$}$endif$}
 
 \def \yoursign {$vase.znacka$}
 \def \yourdate {$vase.den$}
