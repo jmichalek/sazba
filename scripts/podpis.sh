@@ -40,7 +40,7 @@ function installPdfSign() {
   
   # Copy script to user directory
 
-  sudo mv -t $installDir $0;
+  sudo cp -t $installDir $0;
   mkdir -p $HOME/bin;
   ln -s $installDir/$0 $HOME/bin/sign;
   echo "Nainstalováno. Spouštějte příkazem sign -u jmeno.";
