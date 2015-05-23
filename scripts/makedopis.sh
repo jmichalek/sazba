@@ -6,7 +6,7 @@
 # - Ondřej Profant
 
 # Global variables
-packages="texlive texlive-wallpaper texlive-wallpaper texlive-smartref texlive-smartref"
+packages="texlive texlive-wallpaper texlive-smartref texlive-smartref"
 pandocExe="";
 template="";
 DIR="";
@@ -148,11 +148,11 @@ function parseCmdArgs() {
 
 parseCmdArgs "$@";
 
-checkTex;
+checkTeX;
 
 locatePandoc;
 
-if [ -n "$template" ]; then
+if [ -z "$template" ]; then
   prepareSymlink;
   template="files/forms/dopis/main.tex";
 fi;
