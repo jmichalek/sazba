@@ -94,6 +94,11 @@ function cleanUpSymlink() {
 # via pandoc
 ##############################
 function md2pdf() {
+  # we extract the form from the yaml front matter
+  form="files/forms/"$(awk -F ":[ ]+" '/sablona/ {print $2}' < "$1")"/main.tex";
+  if [ -s "$form" ]; then
+    template=$form;
+  fi;
   $pandocExe \
     --template=${template} \
     --latex-engine=xelatex \
